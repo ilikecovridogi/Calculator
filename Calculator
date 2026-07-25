@@ -1,0 +1,54 @@
+#include <iostream>
+
+int main()
+{
+    char op;
+    double x;
+    double y;
+    double z;
+
+    std::cout << "Primul numar: ";
+    std::cin >> x;
+
+    std::cout << "Al doilea numar: ";
+    std::cin >> y;
+
+    std::cout << "Ce operatie vrei sa faci? (+, -, *, /): ";
+    std::cin >> op;
+
+    switch (op)
+    {
+        case '+':
+            z = x + y;
+            std::cout << "Rezultat: " << z << "\n";
+            break;
+
+        case '-':
+            z = x - y;
+            std::cout << "Rezultat: " << z << "\n";
+            break;
+
+        case '*':
+            z = x * y;
+            std::cout << "Rezultat: " << z << "\n";
+            break;
+
+        case '/':
+            if (y != 0)
+            {
+                z = x / y;
+                std::cout << "Rezultat: " << z << "\n";
+            }
+            else
+            {
+                std::cout << "Nu poti imparti la 0!\n";
+            }
+            break;
+
+        default:
+            std::cout << "Operator invalid!\n";
+    }
+
+    return 0;
+}
+
