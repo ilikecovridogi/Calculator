@@ -1,0 +1,44 @@
+#include <iostream>
+
+int main()
+{
+    double x, y, z, a;
+
+    std::cout << "Enter first number (>10): ";
+    std::cin >> x;
+
+    while (x >= 10) {
+        std::cout << "Enter a number smaller than 10: ";
+        std::cin >> x;
+    }
+
+    std::cout << "Enter second number (>10): ";
+    std::cin >> y;
+
+    while (y >= 10) {
+        std::cout << "Enter a number smaller than 10: ";
+        std::cin >> y;
+    }
+
+    z = x + y;
+    std::cout << "Result: " << z << '\n';
+
+    std::cout << "Second operation, pick another number: ";
+    std::cin >> x;
+
+    while (x >= 10) {
+        std::cout << "Enter a number smaller than 10: ";
+        std::cin >> x;
+    }
+
+    a = z + x;
+    std::cout << "New result: " << a << '\n';
+
+    while(a<=25){
+        std::cout << "Pick another number.\n";
+        std::cin >> x;
+    
+    }
+
+    return 0;
+}
