@@ -1,0 +1,65 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+int main()
+{
+    std::string intrebari[] = {
+        "1. In ce an m-am nascut?",
+        "2. In ce luna m-am nascut?",
+        "3. In ce zi m-am nascut?",
+        "4. In ce tara m-am nascut?"
+    };
+
+    std::string optiuni[][4] = {
+        {"A. 2001", "B. 2011", "C. 2010", "D. 1989"},
+        {"A. DECEMBRIE", "B. AUGUST", "C. FEBRUARIE", "D. NU M-AM NASCUT, SUNT O ENTITATE"},
+        {"A. 21", "B. 31", "C. 40", "D. 10"},
+        {"A. OLANDA", "B. ELVETIA", "C. SLOWJAMASTAN", "D. ROMANIA"}
+    };
+
+    char answerKey[] = {'C', 'A', 'D', 'D'};
+
+    int size = sizeof(intrebari) / sizeof(intrebari[0]);
+    char guess;
+    int score = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << "****************************\n";
+        std::cout << intrebari[i] << '\n';
+        std::cout << "****************************\n";
+
+        for (int j = 0; j < 4; j++)
+        {
+            std::cout << optiuni[i][j] << '\n';
+        }
+
+        std::cout << "Introdu raspunsul (A, B, C sau D): ";
+        std::cin >> guess;
+
+        guess = toupper(guess);
+
+        if (guess == answerKey[i])
+        {
+            std::cout << "Corect!\n";
+            score++;
+        }
+        else
+        {
+            std::cout << "Ai gresit!\n";
+            std::cout << "Raspunsul corect era: " << answerKey[i] << "\n";
+        }
+
+        std::cout << '\n';
+    }
+
+    std::cout << "****************************\n";
+    std::cout << "         REZULTAT\n";
+    std::cout << "****************************\n";
+    std::cout << "Raspunsuri corecte: " << score << '\n';
+    std::cout << "Numar de intrebari: " << size << '\n';
+    std::cout << "Scor: " << (score / (double)size) * 100 << "%\n";
+
+    return 0;
+}
